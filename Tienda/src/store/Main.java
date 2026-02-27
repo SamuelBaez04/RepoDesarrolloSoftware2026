@@ -38,5 +38,12 @@ public class Main {
     public static double aplicarDescuento(double valor, double porcentaje) {
         return valor - (valor * porcentaje / 100);
     }
+
+    public static void mostrarResumenInventario(Inventario inventario) {
+        for (Producto p : inventario.getProductos()) {
+            System.out.println(p.getNombre() + " - " + p.getPrecio());
+        }
+    }
+
 }
 

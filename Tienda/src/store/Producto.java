@@ -43,4 +43,12 @@ public class Producto {
         System.out.println("Precio: $" + precio);
         System.out.println("Cantidad disponible: " + cantidad);
     }
+
+    public void setPrecio(double precio) {
+        if (precio < 0) {
+            throw new IllegalArgumentException("Precio invalido");
+        }
+        this.precio = precio;
+    }
+
 }

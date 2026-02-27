@@ -8,6 +8,10 @@ public class Inventario {
         productos = new ArrayList<>();
     }
 
+    public ArrayList<Producto> getProductos() {
+        return productos;
+    }
+
     public void agregarProducto(Producto producto) {
         productos.add(producto);
     }
