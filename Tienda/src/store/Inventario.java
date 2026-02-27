@@ -8,6 +8,10 @@ public class Inventario {
         productos = new ArrayList<>();
     }
 
+    public ArrayList<Producto> getProductos() {
+        return productos;
+    }
+
     public void agregarProducto(Producto producto) {
         productos.add(producto);
     }
@@ -41,6 +45,41 @@ public class Inventario {
         }
 
         return total;
+    }
+
+    public Producto buscarProductoPorCodigo(String codigo) {
+
+        if (codigo == null) {
+            return null;
+        }
+
+        for (Producto p : productos) {
+            if (p.getCodigo().equalsIgnoreCase(codigo)) {
+                return p;
+            }
+        }
+
+        return null;
+    }
+
+
+    public double calcularPromedioPrecios() {
+
+        if (productos.isEmpty()) {
+            return 0;
+        }
+
+        return productos.get(0).getPrecio();
+    }
+
+
+    public Producto obtenerProductoConMenorCantidad() {
+
+        if (productos.isEmpty()) {
+            return null;
+        }
+
+        return productos.get(0);
     }
 
 }

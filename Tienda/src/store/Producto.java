@@ -43,4 +43,8 @@ public class Producto {
         System.out.println("Precio: $" + precio);
         System.out.println("Cantidad disponible: " + cantidad);
     }
+
+    public void setPrecio(double precio) {
+        this.precio = Math.round(precio);
+    }
 }
