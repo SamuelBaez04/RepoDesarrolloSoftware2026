@@ -27,4 +27,15 @@ public class Inventario {
             System.out.println("----------------------");
         }
     }
+
+    public double calcularValorTotalInventario() {
+        double total = 0;
+
+        for (Producto p : productos) {
+            total += p.getPrecio() * p.getCantidad();
+        }
+
+        return total;
+    }
+
 }
