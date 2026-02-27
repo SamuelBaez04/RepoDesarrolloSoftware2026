@@ -38,4 +38,41 @@ public class Inventario {
         return total;
     }
 
+    public Producto buscarProductoPorCodigo(String codigo) {
+
+        for (Producto p : productos) {
+            if (p.getCodigo().equals(codigo)) {
+                return p;
+            }
+        }
+
+        return null;
+    }
+
+
+    public double calcularPromedioPrecios() {
+
+        double suma = 0;
+
+        for (Producto p : productos) {
+            suma += p.getPrecio();
+        }
+
+        return suma / productos.size();
+    }
+
+
+    public Producto obtenerProductoConMenorCantidad() {
+
+        Producto menor = productos.get(0);
+
+        for (Producto p : productos) {
+            if (p.getCantidad() < menor.getCantidad()) {
+                menor = p;
+            }
+        }
+
+        return menor;
+    }
+
 }
